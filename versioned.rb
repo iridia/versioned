@@ -14,8 +14,14 @@ commitString = revisionString.match(/commit .+$/).to_s.gsub(/commit\s+/, "")
 authorString = revisionString.match(/Author: .+$/).to_s.gsub(/Author:\s+/, "")
 dateString = revisionString.match(/Date: .+$/).to_s.gsub(/Date:\s+/, "")
 
-puts "Building from branch #{branchString} # #{commitString} committed by #{authorString}."
-puts "Date: #{dateString}"
+puts <<-EOF
+
+Branch: #{branchString}
+Commit: #{commitString}
+By: #{authorString}
+Date: #{dateString}
+
+EOF
 
 
 
